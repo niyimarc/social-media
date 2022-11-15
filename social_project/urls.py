@@ -19,9 +19,11 @@ from django.urls import path
 # in other to set the media root and static url
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home_view, name='home_view'),
 ]
 
 
