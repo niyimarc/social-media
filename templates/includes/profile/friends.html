@@ -1,0 +1,26 @@
+<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+    <ul class="widget-users row">
+    {% for friend in profile.get_friends  %}
+    <li class="col-md-6">
+            <div class="img">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="img-responsive" alt="">
+            </div>
+            <div class="details">
+                <div class="name">
+                    <a href="#">{{friend}} </a>
+                </div>
+                <div class="time">
+                    <i class="fa fa-clock-o"></i> Last online: 5 minutes ago
+                </div>
+                <div class="type">
+                    <span class="label label-danger">Admin</span>
+                </div>
+            </div>
+        </li>
+    
+    {% endfor %}
+        
+    </ul>
+    <br>
+    <a href="#" class="btn btn-success pull-right">View all users</a>
+</div>
