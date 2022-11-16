@@ -1,0 +1,39 @@
+<div class="px-4 pt-0 pb-4 bg-dark">
+    <div class="media align-items-end profile-header">
+        <div class="profile mr-3 mt-4"><img src="{{profile.avatar.url}}" alt="..." width="130"
+                class="rounded mb-2 img-thumbnail"><a href="#"
+                class="btn btn-primary btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#uploadavatar">Upload Image</a></div>
+        <div class="media-body mb-5 text-white">
+            <h4 class="mt-0 mb-0">{{profile.first_name}} {{profile.last_name}} 
+            <a href="" data-bs-toggle="modal" data-bs-target="#editname">
+            <i class="fa-solid fa-pen-to-square"></i>
+            </a></h4>
+            <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>{{profile.country}}</p>
+        </div>
+        
+    </div>
+</div>
+
+<div class="row">
+    <div class="py-4 col-md-8 px-4">
+        <a href="" data-bs-toggle="modal" data-bs-target="#editbio">
+        <div class="p-4 bg-light rounded shadow-sm">
+            <h5 class="mb-3">Bio</h5>
+            <p class="font-italic mb-0">{{profile.bio}}</p>
+
+        </div>
+        </a>
+    </div>
+
+    <div class="p-4 d-flex justify-content-end text-center col-md-3">
+        <ul class="list-inline mb-0">
+            <li class="list-inline-item">
+                <h5 class="font-weight-bold mb-0 d-block">{{profile.get_friends_no}}</h5><small
+                    class="text-muted"> <i class="fa fa-user-circle-o mr-1"></i>Friends</small>
+            </li>
+            <li class="list-inline-item">
+                <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"> <i
+                        class="fa fa-user-circle-o mr-1"></i>Followers</small>
+            </li>
+        </ul>
+    </div>

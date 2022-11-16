@@ -9,38 +9,12 @@
     <div class="col-xl-8 col-lg-7">
         <!-- Profile widget -->
         <div class="bg-white card shadow rounded overflow-hidden">
-            <div class="px-4 pt-0 pb-4 bg-dark">
-                <div class="media align-items-end profile-header">
-                    <div class="profile mr-3 mt-4"><img src="{{profile.avatar.url}}" alt="..." width="130"
-                            class="rounded mb-2 img-thumbnail"><a href="#" class="btn btn-dark btn-sm btn-block">Edit
-                            profile</a></div>
-                    <div class="media-body mb-5 text-white">
-                        <h4 class="mt-0 mb-0">{{profile.first_name}} {{profile.last_name}}</h4>
-                        <p class="small mb-4"> <i class="fa fa-map-marker mr-2"></i>{{profile.country}}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-light p-4 d-flex justify-content-end text-center">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item">
-                        <h5 class="font-weight-bold mb-0 d-block">{{profile.get_friends_no}}</h5><small
-                            class="text-muted"> <i class="fa fa-user-circle-o mr-1"></i>Friends</small>
-                    </li>
-                    <li class="list-inline-item">
-                        <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"> <i
-                                class="fa fa-picture-o mr-1"></i>Photos</small>
-                    </li>
-                    <li class="list-inline-item">
-                        <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"> <i
-                                class="fa fa-user-circle-o mr-1"></i>Followers</small>
-                    </li>
-                </ul>
-            </div>
+            {% include "includes/profile/profile.html" %}
+        </div>
 
 
             <div class="py-4 px-4">
-                {% include "includes/profile/nav.html" %}
+                
                 <div class="tab-content" id="nav-tabContent">
                     {% comment %} photo starts here {% endcomment %}
                     {% include "includes/profile/photos.html" %}
@@ -50,10 +24,16 @@
                     {% include "includes/profile/posts.html" %}
                     {% comment %} post ends here {% endcomment %}
 
-                    {% comment %} friends starts here  {% endcomment %}
+                    {% comment %} friends starts here {% endcomment %}
                     {% include "includes/profile/friends.html" %}
-                    {% comment %} friends ends here  {% endcomment %}
-                </div>
+                    {% comment %} friends ends here {% endcomment %}
+
+                    {% include "includes/profile/modals.html" %}
+                    {% include "includes/profile/nav.html" %}
+                    {% if confirm %}
+                        <h2>Updated</h2>
+                    {% endif %}
+                </div>    
 
 
             </div>

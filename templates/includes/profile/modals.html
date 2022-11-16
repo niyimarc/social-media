@@ -1,0 +1,81 @@
+<!-- Button trigger modal -->
+{% comment %} <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadavatar">
+  Launch demo modal
+</button> {% endcomment %}
+
+<!-- Upload image Modal starts here -->
+<div class="modal fade" id="uploadavatar" tabindex="-1" aria-labelledby="uploadavatarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="uploadavatarLabel">Upload Profile Picture</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST" enctype="multipart/form-data">
+          {{avatarform}}
+
+          {% csrf_token %}
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="btnavatar">Save changes</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} upload image modal ends here  {% endcomment %}
+
+
+{% comment %} edit name modal starts here  {% endcomment %}
+<div class="modal fade" id="editname" tabindex="-1" aria-labelledby="editnameLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editnameLabel">Update Name</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+        {% csrf_token %}
+          {{nameform.first_name}}
+          {{nameform.last_name}}
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="btnname">Save changes</button>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} edit name modal ends here  {% endcomment %}
+
+{% comment %} edit bio modal starts here  {% endcomment %}
+<div class="modal fade" id="editbio" tabindex="-1" aria-labelledby="editbioLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editbioLabel">Update Bio</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="POST">
+        {% csrf_token %}
+          {{bioform}}
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="btnbio">Save changes</button>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% comment %} edit bio modal ends here  {% endcomment %}
