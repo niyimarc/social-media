@@ -20,6 +20,7 @@
         <div class="p-4 bg-light rounded shadow-sm">
             <h5 class="mb-3">Bio</h5>
             <p class="font-italic mb-0">{{profile.bio}}</p>
+            <i class="fa-solid fa-pen-to-square"></i>
 
         </div>
         </a>
@@ -32,8 +33,12 @@
                     class="text-muted"> <i class="fa fa-user-circle-o mr-1"></i>Friends</small>
             </li>
             <li class="list-inline-item">
-                <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"> <i
-                        class="fa fa-user-circle-o mr-1"></i>Followers</small>
+                <h5 class="font-weight-bold mb-0 d-block">{{profile.get_posts_no}}</h5><small class="text-muted"> <i
+                        class="fa fa-user-circle-o mr-1"></i>posts</small>
+            </li>
+            <li class="list-inline-item">
+                <h5 class="font-weight-bold mb-0 d-block">{{profile.get_likes_received_on_post}}</h5><small class="text-muted"> <i
+                        class="fa fa-user-circle-o mr-1"></i>likes</small>
             </li>
         </ul>
     </div>

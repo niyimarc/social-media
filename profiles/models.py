@@ -26,6 +26,56 @@ class Profile(models.Model):
     # define a method to get the total number of friends 
     def get_friends_no(self):
         return self.friends.all().count()
+    
+    
+    # define a method to get the total number of friends
+    def get_posts_no(self):
+        # there is a reverse relationship in Post model 
+        # that is why I can use related_name (posts)
+        return self.posts.all().count()
+
+    # define a method to get the author of post
+    def get_all_authors_post(self):
+        # there is a reverse relationship in Post model 
+        # that is why I can use related_name (posts)
+        return self.posts.all()
+
+    # define a method to get the likes given to post
+    def get_likes_given_on_post(self):
+        likes = self.postlike_set.all()
+        total_liked = 0
+        for item in likes:
+            if item.value == 'Like':
+                total_liked +=1
+        return total_liked
+
+    # define a method to get the likes given to comment
+    def get_likes_given_on_comment(self):
+        likes = self.commentlike_set.all()
+        total_liked = 0
+        for item in likes:
+            if item.value == 'Like':
+                total_liked +=1
+        return total_liked
+
+    # define a method to get the likes received on post
+    def get_likes_received_on_post(self):
+        # I can use posts here because there is a reverse relationship 
+
+        posts = self.posts.all()
+        total_liked = 0
+        for item in posts:   
+            total_liked += item.liked.all().count()
+        return total_liked
+
+    # define a method to get the likes received on comment
+    def get_likes_received_on_comment(self):
+        likes = self.commentlike_set.all()
+        total_liked = 0
+        for item in likes:
+            if item.value == 'Like':
+                total_liked +=1
+        return total_liked
 
     def __str__(self):
         return f"{self.user.username}-{self.created.strftime('%d-%m-%Y')}"

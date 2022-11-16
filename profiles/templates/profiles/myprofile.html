@@ -16,6 +16,7 @@
             <div class="py-4 px-4">
                 
                 <div class="tab-content" id="nav-tabContent">
+                    {% include "includes/profile/nav.html" %}
                     {% comment %} photo starts here {% endcomment %}
                     {% include "includes/profile/photos.html" %}
                     {% comment %} photo ends here {% endcomment %}
@@ -29,7 +30,7 @@
                     {% comment %} friends ends here {% endcomment %}
 
                     {% include "includes/profile/modals.html" %}
-                    {% include "includes/profile/nav.html" %}
+                    
                     {% if confirm %}
                         <h2>Updated</h2>
                     {% endif %}
